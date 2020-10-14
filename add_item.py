@@ -82,6 +82,8 @@ def parse_when(when):
     if when.isdigit():
         when = today + datetime.timedelta(int(when))
         return when.__str__()
+    else:
+        return when
     return ""
 
 
