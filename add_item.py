@@ -8,7 +8,9 @@ __date__ = "2020.10.14"
 import sys
 import datetime
 import json
-import subprocess
+
+from common import get_things3_project_names
+
 
 # 解析参数
 def parse(param):
@@ -21,7 +23,7 @@ def parse(param):
 
 def process(params):
     title, when, cost = params
-    projects = get_things3_projects()
+    projects = get_things3_project_names()
     url = "things:///add?"
     cost = parse_cost(cost)
     if cost > 0:
@@ -58,24 +60,6 @@ def parse_cost(cost):
         return 0
     else:
         return int(cost)
-
-
-# 使用AppleScript获取Things3的Project列表
-def get_things3_projects():
-    script = """
-    tell application "Things3"
-    set prStr to ""
-    repeat with pr in projects
-        set prStr to prStr & name of pr & "|"
-    end repeat
-    return prStr
-    end tell
-    """
-    p = subprocess.Popen(['osascript', '-'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
-    stdout, stderr = p.communicate(script)
-    projects = stdout.rstrip("|\n").split("|")
-    projects.insert(0, 'inbox')
-    return projects
 
 
 def parse_when(when):
