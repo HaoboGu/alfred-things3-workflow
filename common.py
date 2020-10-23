@@ -27,7 +27,7 @@ def get_things3_project_names():
                          universal_newlines=True)
     stdout, stderr = p.communicate(script)
     projects = stdout.rstrip("|\n").split("|")
-    projects.insert(0, 'inbox')
+    projects.append('inbox')
     return projects
 
 
