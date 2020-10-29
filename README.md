@@ -12,9 +12,14 @@ This workflow aims to provide a convenient, easy-to-use and concise way to add/u
   # Example
   thadd DoSomething! today 2
   thadd DoAnotherthingTomorrow +1 3
-  ``` 
+  ```
+  
 - Where is the target project?
   Valid target projects can be loaded automatically, just choose your target project.
+
+- Usage example
+
+  ![thadd](http://haobo-markdown.oss-cn-zhangjiakou.aliyuncs.com/markdown/2020-10-29-133231.gif)
 
 ## Complete workitems
 - Command
@@ -25,6 +30,10 @@ This workflow aims to provide a convenient, easy-to-use and concise way to add/u
   thc myWorkitem target_project
   thc it
   ```
+  
 - How to filter the workitem?
   This command provides two ways to filter the workitem: title and project(optional). Both parameters accepts fuzzy query, which means you don't need to remember the full name of target project and full title of workitem.
+  
+- Usage example
 
+  ![thc](http://haobo-markdown.oss-cn-zhangjiakou.aliyuncs.com/markdown/2020-10-29-133209.gif)
